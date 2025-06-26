@@ -1,0 +1,68 @@
+/* nel definire un'"animation" per prima cosa è necessario SCRIVERLA! */
+@keyframes change-color {
+  0% {
+    background-color: blue;
+    color: white;
+  }
+
+  50% {
+    background-color: darkred;
+    color: black;
+  }
+
+  100% {
+    background-color: blue;
+    color: white;
+  }
+}
+
+@keyframes movement {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  25% {
+    transform: translate(100px, -75px);
+  }
+
+  50% {
+    transform: translate(130px, 75px);
+  }
+  75% {
+    transform: translate(50px, 25px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes start-and-stop {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(400px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+#color {
+  /* definisco l'animazione per il primo box */
+  /* animation: nome durata curva ritardo ripetizioni stilifinali */
+  animation: change-color 6s linear 0s 1 forwards; /* forwards messo alla fine
+    "congela" gli stili finali e li applica all'elemento una volta conclusa l'animazione */
+}
+
+#move {
+  background-color: cadetblue;
+  animation: movement 3s ease-in 3s infinite;
+}
+
+/* creo una classe CSS il cui unico scopo è applicare un'animazione ad un elemento */
+/* questa classe può essere applicata o rimossa condizionalmente agli elmenti
+tramite JS */
+.moving {
+  animation: start-and-stop 3s linear 0s 1;
+}

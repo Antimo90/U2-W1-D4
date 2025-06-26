@@ -1,0 +1,49 @@
+#long {
+  background-color: chocolate;
+  color: white;
+  /* cerchiamo ora di RALLENTARE l'esecuzione della nuova width all'hover */
+  /* transition: proprietà durata curva ritardo */
+  transition: width 3s cubic-bezier(0.12, 1.34, 0.92, -0.17) 0s;
+  /* mi sto riferendo alla proprietà che cambierà nello pseudoselettore :hover */
+}
+
+#long:hover {
+  /* quando ci finisco sopra col cursore... */
+  width: 500px;
+}
+
+#multicolor {
+  background-color: blue;
+  color: white;
+  transition: all 2500ms linear 0s;
+  /* all vuol dire: a tutte le proprietà che cambiano a seguito dell'evento di hover
+   verrà applicata la seguente transizione */
+}
+
+#multicolor:hover {
+  background-color: greenyellow;
+  color: black;
+}
+
+#crazybox {
+  background-color: crimson;
+  color: white;
+  transition: all 2s ease-in 0s;
+}
+
+#crazybox:hover {
+  background-color: olive;
+  transform: translateX(400px) rotate(3turn);
+}
+
+/* esempio con transizioni diverse per IN e OUT */
+#inout {
+  background-color: chocolate;
+  color: white;
+  transition: width 5s linear 1s; /*è diventata la transizione per OUT */
+}
+
+#inout:hover {
+  width: 500px;
+  transition: width 2s linear 0s; /*è diventata la transizione per IN */
+}

@@ -1,0 +1,35 @@
+#rotate {
+  background-color: orange;
+  transform: rotate(125deg);
+  /* notate come una volta ruotato, l'elemento esuli dal normale flow della pagina */
+  /* (come con float, position: absolute etc.) */
+}
+
+#skew {
+  background-color: darkgreen;
+  color: white;
+  transform: skew(18deg, 13deg);
+}
+
+#scale {
+  background-color: blueviolet;
+  color: white;
+  transform: scale(1.25);
+  /* 1 rappresenta la dimensione naturale dell'elemento. Valori superiori a 1
+  lo ingrandiscono, valori inferiori a 1 lo rimpiccioliscono (è anche possibile
+  utilizzare valori in percentuale partendo dal 100%) */
+}
+
+#translate {
+  background-color: deeppink;
+  color: white;
+  transform: translate(30px, -50px);
+  /* valori della x positivi vanno a dx, valori della y positivi vanno in giu */
+}
+
+#multiple {
+  background-color: lightsalmon;
+  /* potete dare multipli effetti di trasformazione separando i vari valori 
+  con uno spazio. Altrimenti dovete ricavarvi la matrice di trasformazione */
+  transform: rotate(45deg) scale(1.2);
+}

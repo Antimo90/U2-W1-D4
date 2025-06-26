@@ -1,0 +1,65 @@
+body {
+  background-color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background-color: #4e4e4e;
+  color: white;
+  width: 200px;
+  height: 450px;
+  border: 1px solid black;
+  border-radius: 25px;
+  padding: 1em;
+  text-align: justify;
+}
+
+.card h3 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.card:nth-of-type(1) {
+  transform: rotate(-12deg) translate(20px, 30px);
+  /* di default va dietro le altre */
+  z-index: 1;
+}
+
+.card:nth-of-type(2) {
+  z-index: 2;
+}
+
+.card:nth-of-type(3) {
+  z-index: 3;
+  transform: rotate(12deg) translate(-20px, 30px);
+}
+
+.card:nth-of-type(1):hover {
+  background-color: darkgoldenrod;
+  transform: translate(20px, 0px) scale(1.1);
+  z-index: 5;
+}
+
+.card:nth-of-type(2):hover {
+  background-color: darkgoldenrod;
+  transform: scale(1.1);
+  z-index: 5;
+}
+
+.card:nth-of-type(3):hover {
+  background-color: darkgoldenrod;
+  transform: translate(-20px, 0px) scale(1.1);
+  z-index: 5;
+}
+
+.card {
+  transition: all 0.25s linear 0s;
+}

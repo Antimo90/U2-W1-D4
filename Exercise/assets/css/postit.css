@@ -1,0 +1,128 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #6a6a6a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* DEFINIZIONE KEYFRAMES PER L'ANIMAZIONE DI ENTRATA */
+@keyframes entrance {
+   0% {
+        /* Inizia molto in alto, invisibile e piccolo */
+        transform: translateY(-500px) scale(0) rotate(0deg); 
+        opacity: 0;
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+    50% {
+        /* Scende quasi alla posizione finale, con un leggero rimbalzo e ingrandimento */
+        transform: translateY(20px) scale(1.1) rotate(0deg); 
+        opacity: 1;
+        box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    }
+    100% {
+        /* Arriva alla posizione finale, dimensione normale e rotazione desiderata */
+        transform: translateY(0) scale(1); 
+        opacity: 1;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* STILI PER IL CONTENITORE PRINCIPALE (MAIN) */
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 20px;
+}
+
+/* STILI BASE PER OGNI POST-IT */
+.postit {
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+
+    /* Transizioni per l'effetto hover (z-index delay corretto) */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, z-index 0s 0.3s;
+
+    /* Animazione di entrata al caricamento della pagina */
+    animation: entrance 1s ease-out backwards; 
+    transform: rotate(0deg); 
+    opacity: 1; 
+}
+
+/* STILI SPECIFICI (COLORE, ROTAZIONE, RITARDO ANIMAZIONE) PER OGNI POST-IT */
+.postit:nth-child(1) {
+    background-color: #fefd9c;
+    animation-delay: 0.1s; 
+    transform: rotate(-5deg); 
+}
+.postit:nth-child(2) {
+    background-color: #d1f7d1; 
+    animation-delay: 0.3s;
+    transform: rotate(5deg); 
+}
+.postit:nth-child(3) {
+    background-color: #d9d1f7; 
+    animation-delay: 0.2s;
+    transform: rotate(-5deg);
+}
+.postit:nth-child(4) {
+    background-color: #d1f7d1; 
+    animation-delay: 0.5s;
+    transform: rotate(5deg);
+}
+.postit:nth-child(5) {
+    background-color: #fefd9c; 
+    animation-delay: 0.4s;
+    transform: rotate(3deg);
+}
+.postit:nth-child(6) {
+    background-color: #d9d1f7; 
+    animation-delay: 0.6s;
+    transform: rotate(-3deg);
+}
+.postit:nth-child(7) {
+    background-color: #fefd9c; 
+    animation-delay: 0.0s;
+    transform: rotate(-7deg);
+}
+.postit:nth-child(8) {
+    background-color: #d1f7d1; 
+    animation-delay: 0.7s;
+    transform: rotate(7deg);
+}
+
+/* STILI DEL TESTO ALL'INTERNO DEI POST-IT */
+.taskNumber {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.taskDescription {
+    font-size: 1.4em;
+    color: #555;
+    font-weight: normal;
+}
+
+/* EFFETTO HOVER SUI POST-IT */
+.postit:hover {
+    transform: scale(1.1) rotate(0deg); 
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5); 
+    z-index: 10; 
+}
